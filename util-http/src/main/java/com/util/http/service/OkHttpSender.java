@@ -16,22 +16,18 @@ public class OkHttpSender implements ISender{
         return null;
     }
 
-    @Override
-    public void sendGet(String url, Map<String, Object> header) {
+    public void sendGet(String url, Map<String, Object> header, Map<String,Object> params) {
 
     }
 
-    @Override
     public void sendPost(String url, Map<String, Object> header, Map<String, Object> params) {
 
     }
 
-    @Override
     public void sendPut(String url, Map<String, Object> header, Map<String, Object> params) {
 
     }
 
-    @Override
     public void sendDelete(String url, Map<String, Object> header, Map<String, Object> params) {
 
     }

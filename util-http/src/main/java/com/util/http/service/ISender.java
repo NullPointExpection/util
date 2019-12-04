@@ -16,11 +16,7 @@ public interface ISender {
      * @param header
      * @param params
      */
-    CustomHttpResponse send(String url, String type , Map<String,Object> header, Map<String,Object> params);
+    CustomHttpResponse send(String url, String type , Map<String,String> header, Map<String,String> params);
 
-    void sendGet(String url,Map<String,Object> header);
-    void sendPost(String url,Map<String,Object> header, Map<String,Object> params);
-    void sendPut(String url,Map<String,Object> header, Map<String,Object> params);
-    void sendDelete(String url,Map<String,Object> header, Map<String,Object> params);
 
 }

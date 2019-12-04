@@ -38,8 +38,8 @@ public class CustomHttpService {
         }
         String url = customHttpRequest.getUrl();
         RequestType requestType = customHttpRequest.getRequestType();
-        Map<String,Object> params = customHttpRequest.getParams();
-        Map<String,Object> headers = customHttpRequest.getHeader();
+        Map<String,String> params = customHttpRequest.getParams();
+        Map<String,String> headers = customHttpRequest.getHeader();
         return iSender.send(url,requestType.getType(),headers,params);
     }
 

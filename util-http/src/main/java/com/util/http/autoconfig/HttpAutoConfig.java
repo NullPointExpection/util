@@ -3,6 +3,8 @@ package com.util.http.autoconfig;
 import com.util.http.sender.CustomHttpService;
 import com.util.http.service.HttpClientSender;
 import com.util.http.service.OkHttpSender;
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +34,12 @@ public class HttpAutoConfig {
     @ConditionalOnMissingBean
     public HttpClientSender httpClientSender(){
         return new HttpClientSender();
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public HttpClient httpClient(){
+        return HttpClientBuilder.create().build();
     }
 
 }

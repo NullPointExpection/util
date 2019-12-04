@@ -19,9 +19,8 @@ public class CustomHttpRequest {
 
     private RequestType requestType;
 
-    private Map<String,Object> header;
+    private Map<String,String> header;
 
-    private Map<String,Object> params;
-
+    private Map<String,String> params;
 
 }
