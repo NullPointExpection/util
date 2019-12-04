@@ -6,9 +6,8 @@
 .idea/
 *.iml
 
-### test
-/util-test/
-
+### traget
+target/
 
 ### class文件
 *.class
