@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.util</groupId>
+  <artifactId>util</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.7.RELEASE</version>
+  </parent>
+
+  <!-- 整个项目为测试方便开发 -->
+  <modules>
+    <module>util-http</module>
+    <module>util-test</module>
+    <module>util-schedule</module>
+    <module>util-thread</module>
+    <module>util-safe</module>
+    <module>util-common</module>
+    <module>util-config</module>
+  </modules>
+
+  <properties>
+    <com.alibaba.fastjson.version>1.2.62</com.alibaba.fastjson.version>
+  </properties>
+
+  <dependencies>
+
+    <!-- fastjson -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>${com.alibaba.fastjson.version}</version>
+    </dependency>
+
+
+
+  </dependencies>
+
+
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- http模块 -->
+      <dependency>
+        <groupId>com.util</groupId>
+        <artifactId>util-http</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- 线程模块 -->
+      <dependency>
+        <groupId>com.util</groupId>
+        <artifactId>util-thread</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- 任务调度模块 -->
+      <dependency>
+        <groupId>com.util</groupId>
+        <artifactId>util-schedule</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- 安全模块 -->
+      <dependency>
+        <groupId>com.util</groupId>
+        <artifactId>util-safe</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- 通过模块 -->
+      <dependency>
+        <groupId>com.util</groupId>
+        <artifactId>util-common</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- 配置加载模块 -->
+      <dependency>
+        <groupId>com.util</groupId>
+        <artifactId>util-config</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+</project>
