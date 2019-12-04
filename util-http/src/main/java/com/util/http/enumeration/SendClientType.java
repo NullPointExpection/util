@@ -1,17 +1,21 @@
 package com.util.http.enumeration;
 
 
+/**
+ * 发送客户端类型
+ * @author liangjinhui
+ */
 public enum  SendClientType {
 
     /**
      * httpclient
      */
-    HttpClient("HttpClient"),
+    HttpClient("httpClientSender"),
 
     /**
      * okhttp
      */
-    OkHttp("OkHttp");
+    OkHttp("okHttpSender");
 
     SendClientType(String clientType){
         this.clientType = clientType;

@@ -1,5 +1,6 @@
 package com.util.http.request;
 
+import com.util.http.enumeration.RequestType;
 import com.util.http.enumeration.SendClientType;
 import lombok.Data;
 
@@ -16,9 +17,11 @@ public class CustomHttpRequest {
 
     private String url;
 
-    private Map<String,String> header;
+    private RequestType requestType;
 
-    private Map<String,String> params;
+    private Map<String,Object> header;
+
+    private Map<String,Object> params;
 
 
 }

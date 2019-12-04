@@ -5,3 +5,11 @@
 .metadata/
 .idea/
 *.iml
+
+### test
+/util-test/
+
+
+### class文件
+*.class
+

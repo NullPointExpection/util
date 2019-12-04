@@ -1,13 +1,14 @@
 package com.util.http.sender;
 
+import com.util.http.enumeration.RequestType;
 import com.util.http.enumeration.SendClientType;
 import com.util.http.request.CustomHttpRequest;
 import com.util.http.response.CustomHttpResponse;
-import com.util.http.service.HttpClientSender;
-import com.util.http.service.OkHttpSender;
+import com.util.http.service.ISender;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 /**
  * 自定义请求发送器
@@ -17,10 +18,7 @@ import org.springframework.stereotype.Service;
 public class CustomHttpService {
 
     @Autowired
-    private OkHttpSender okHttpSender;
-
-    @Autowired
-    private HttpClientSender httpClientSender;
+    private Map<String, ISender> httpSenderMap;
 
     /**
      * 发送Http请求
@@ -28,16 +26,21 @@ public class CustomHttpService {
      * @return
      */
     public CustomHttpResponse send(CustomHttpRequest customHttpRequest){
+        if(customHttpRequest == null){
+            log.error("[{}] [Http Request Is Null]",getClass().getSimpleName());
+            return null;
+        }
         SendClientType sendClientType = customHttpRequest.getSendClientType();
-        if(SendClientType.HttpClient.getClientType().equals(sendClientType.getClientType())){
-
-        } else  if(SendClientType.OkHttp.getClientType().equals(sendClientType.getClientType())){
-
-        } else {
+        ISender iSender = httpSenderMap.get(sendClientType.getClientType());
+        if(iSender == null){
             log.error("[{}] [Http Client Type Error]",getClass().getSimpleName());
             return null;
         }
-        return null;
+        String url = customHttpRequest.getUrl();
+        RequestType requestType = customHttpRequest.getRequestType();
+        Map<String,Object> params = customHttpRequest.getParams();
+        Map<String,Object> headers = customHttpRequest.getHeader();
+        return iSender.send(url,requestType.getType(),headers,params);
     }
 
 }
