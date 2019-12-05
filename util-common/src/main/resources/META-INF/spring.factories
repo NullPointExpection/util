@@ -1,0 +1,3 @@
+# 自动化配置类
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.util.common.autoconfig.CommonUtilConfiguration

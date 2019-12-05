@@ -35,6 +35,11 @@
         </dependency>
 
         <dependency>
+            <groupId>com.util</groupId>
+            <artifactId>util-event</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
