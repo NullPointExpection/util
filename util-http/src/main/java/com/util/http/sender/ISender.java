@@ -1,4 +1,4 @@
-package com.util.http.service;
+package com.util.http.sender;
 
 import com.util.http.response.CustomHttpResponse;
 

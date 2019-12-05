@@ -1,10 +1,10 @@
-package com.util.http.sender;
+package com.util.http.service;
 
 import com.util.http.enumeration.RequestType;
 import com.util.http.enumeration.SendClientType;
 import com.util.http.request.CustomHttpRequest;
 import com.util.http.response.CustomHttpResponse;
-import com.util.http.service.ISender;
+import com.util.http.sender.ISender;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,8 +1,9 @@
 package com.util.http.autoconfig;
 
-import com.util.http.sender.CustomHttpService;
-import com.util.http.service.HttpClientSender;
-import com.util.http.service.OkHttpSender;
+import com.util.http.service.CustomHttpService;
+import com.util.http.sender.HttpClientSender;
+import com.util.http.sender.OkHttpSender;
+import okhttp3.OkHttpClient;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -40,6 +41,12 @@ public class HttpAutoConfig {
     @ConditionalOnMissingBean
     public HttpClient httpClient(){
         return HttpClientBuilder.create().build();
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public OkHttpClient okHttpClient(){
+        return new OkHttpClient();
     }
 
 }

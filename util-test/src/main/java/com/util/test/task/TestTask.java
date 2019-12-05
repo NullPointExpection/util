@@ -1,6 +1,11 @@
 package com.util.test.task;
 
-import com.util.http.sender.CustomHttpService;
+import com.alibaba.fastjson.JSON;
+import com.util.http.enumeration.RequestType;
+import com.util.http.enumeration.SendClientType;
+import com.util.http.request.CustomHttpRequest;
+import com.util.http.response.CustomHttpResponse;
+import com.util.http.service.CustomHttpService;
 import com.util.schedule.task.BaseTask;
 import com.util.schedule.task.TaskResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +27,12 @@ public class TestTask extends BaseTask {
 
     @Override
     public TaskResult execute() {
-        customHttpService.send(null);
+        CustomHttpRequest customHttpRequest = new CustomHttpRequest();
+        customHttpRequest.setUrl("https://www.baidu.com");
+        customHttpRequest.setRequestType(RequestType.GET);
+        customHttpRequest.setSendClientType(SendClientType.OkHttp);
+        CustomHttpResponse customHttpResponse = customHttpService.send(customHttpRequest);
+        System.out.println(JSON.toJSONString(customHttpResponse));
         return TaskResult.success();
     }
 
