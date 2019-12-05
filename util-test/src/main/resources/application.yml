@@ -1,0 +1,4 @@
+util:
+  thread:
+    threadCountConfig:
+      TestThread: 1

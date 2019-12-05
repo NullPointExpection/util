@@ -26,6 +26,11 @@
 
         <dependency>
             <groupId>com.util</groupId>
+            <artifactId>util-thread</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.util</groupId>
             <artifactId>util-http</artifactId>
         </dependency>
 

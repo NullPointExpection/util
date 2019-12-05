@@ -23,7 +23,7 @@
     <module>util-thread</module>
     <module>util-safe</module>
     <module>util-common</module>
-    <module>util-config</module>
+    <module>util-event</module>
   </modules>
 
   <properties>
@@ -91,6 +91,13 @@
         <version>${project.version}</version>
       </dependency>
 
+      <!-- 任务调度模块 -->
+      <dependency>
+        <groupId>com.util</groupId>
+        <artifactId>util-event</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
       <!-- 安全模块 -->
       <dependency>
         <groupId>com.util</groupId>
@@ -105,12 +112,6 @@
         <version>${project.version}</version>
       </dependency>
 
-      <!-- 配置加载模块 -->
-      <dependency>
-        <groupId>com.util</groupId>
-        <artifactId>util-config</artifactId>
-        <version>${project.version}</version>
-      </dependency>
 
     </dependencies>
   </dependencyManagement>
