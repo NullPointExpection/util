@@ -35,8 +35,6 @@
 
   <dependencies>
 
-    <!-- fastjson -->
-
 
   </dependencies>
 
@@ -111,7 +109,6 @@
         <artifactId>util-common</artifactId>
         <version>${project.version}</version>
       </dependency>
-
 
     </dependencies>
   </dependencyManagement>

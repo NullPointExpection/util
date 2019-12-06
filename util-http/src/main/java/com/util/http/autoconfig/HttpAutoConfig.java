@@ -9,14 +9,12 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * http模块自动配置
  * @author liangjinhui
  */
 @Configuration
-@EnableScheduling
 public class HttpAutoConfig {
 
     @Bean
